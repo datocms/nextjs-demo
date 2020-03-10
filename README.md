@@ -18,9 +18,11 @@ Have a look at the end result live:
 
 ### Quick start
 
-First, [create an account on DatoCMS](https://datocms.com).
+1. [Create an account on DatoCMS](https://datocms.com).
 
-Let DatoCMS set everything up for you clicking this button:
+2. Make sure that you have set up the [Github integration on ZEIT](https://zeit.co/docs/v2/git-integrations/zeit-now-for-github).
+
+3. Let DatoCMS set everything up for you clicking this button:
 
 [![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/nextjs-demo)
 
