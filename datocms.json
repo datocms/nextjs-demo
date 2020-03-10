@@ -1,6 +1,6 @@
 {
   "name": "Next.js blog",
-  "previewImage": "https://raw.githack.com/datocms/nextjs-demo/preview.png",
+  "previewImage": "https://raw.githubusercontent.com/datocms/nextjs-demo/master/preview.png",
   "templateId": "23796",
   "deploymentType": "serverless",
   "buildDirectory": "yarn build",
