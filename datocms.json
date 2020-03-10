@@ -1,9 +1,9 @@
 {
   "name": "Next.js blog",
-  "previewImage": "https://cdn.jsdelivr.net/gh/datocms/nextjs-demo/preview.png",
+  "previewImage": "https://raw.githack.com/datocms/nextjs-demo/preview.png",
   "templateId": "23796",
   "deploymentType": "serverless",
-  "netlifyBuildCommand": "yarn build",
-  "netlifyBuildDirectory": "build",
+  "buildDirectory": "yarn build",
+  "buildDirectory": "build",
   "datocmsApiTokenEnvName": "NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN"
 }
