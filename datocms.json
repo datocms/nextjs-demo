@@ -3,7 +3,7 @@
   "previewImage": "https://raw.githubusercontent.com/datocms/nextjs-demo/master/preview.png",
   "templateId": "23796",
   "deploymentType": "serverless",
-  "buildDirectory": "yarn build",
+  "buildCommand": "yarn build",
   "buildDirectory": "build",
   "datocmsApiTokenEnvName": "NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN"
 }
