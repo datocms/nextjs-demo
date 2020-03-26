@@ -1,9 +1,10 @@
 {
-  "name": "Next.js blog",
-  "previewImage": "https://raw.githubusercontent.com/datocms/nextjs-demo/master/preview.png",
-  "templateId": "23796",
-  "deploymentType": "serverless",
+  "name": "Next.js Blog",
+  "description": "Simple blog website built with Next.js and DatoCMS, with preview mode",
+  "previewImage": "https://www.datocms-assets.com/205/1584994498-screen-shot-2020-03-23-at-21-14-46-fullpage.png?crop=top&fit=crop&h=500&w=600&auto=format",
+  "datocmsProjectId": "23796",
+  "deploymentType": "zeit",
   "buildCommand": "yarn build",
-  "buildDirectory": "build",
-  "datocmsApiTokenEnvName": "NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN"
+  "datocmsApiTokenEnvName": "NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN",
+  "livePreviewUrl": "https://next-blog-datocms.now.sh/"
 }
