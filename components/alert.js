@@ -27,7 +27,7 @@ export default function Alert({ preview }) {
             <>
               The source code for this blog is{' '}
               <a
-                href={`https://github.com/zeit/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+                href={`https://github.com/datocms/nextjs-demo`}
                 className="underline hover:text-success duration-200 transition-colors"
               >
                 available on GitHub
