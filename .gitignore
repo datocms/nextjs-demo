@@ -2,3 +2,4 @@
 .now
 .next
 node_modules/
+out/
