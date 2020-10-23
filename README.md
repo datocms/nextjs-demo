@@ -12,9 +12,7 @@ Have a look at the end result live:
 
 ### [https://next-blog-datocms.now.sh/](https://next-blog-datocms.now.sh/)
 
-
 ## How to use
-
 
 ### Quick start
 
@@ -26,11 +24,9 @@ Have a look at the end result live:
 
 [![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/nextjs-demo)
 
-
 ### Local setup
 
 Once the setup of the project and repo is done, clone the repo locally.
-
 
 #### Set up environment variables
 
@@ -61,15 +57,9 @@ NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET=...
 ```bash
 npm install
 npm run dev
-
-# or
-
-yarn install
-yarn dev
 ```
 
 Your blog should be up and running on [http://localhost:3000](http://localhost:3000)!
-
 
 #### Try preview mode
 
@@ -93,8 +83,6 @@ http://localhost:3000/api/preview?secret=<secret>&slug=<slug>
 
 You should now be able to see the updated title. To exit the preview mode, you can click **Click here to exit preview mode** at the top.
 
-
 #### Full guide
 
 To read all the details and a long form guide, please check the original example on the [Next.js repo](https://github.com/zeit/next.js/tree/canary/examples/cms-datocms)
-
