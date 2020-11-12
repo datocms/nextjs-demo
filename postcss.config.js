@@ -14,5 +14,5 @@ module.exports = {
         ]
       : undefined,
     'postcss-preset-env',
-  ],
+  ].filter(x => !!x),
 }

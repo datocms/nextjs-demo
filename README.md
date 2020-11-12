@@ -75,7 +75,7 @@ Now, if you go to the post page on localhost, you won't see the updated title. H
 To enable the Preview Mode, go to this URL:
 
 ```
-http://localhost:3000/api/preview?secret=<secret>&slug=<slug>
+http://localhost:3000/api/preview?secret=<secret>
 ```
 
 - `<secret>` should be the string you entered for `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET`.

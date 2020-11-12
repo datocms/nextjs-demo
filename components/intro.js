@@ -1,5 +1,3 @@
-import { CMS_NAME, CMS_URL } from '../lib/constants'
-
 export default function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
@@ -16,10 +14,10 @@ export default function Intro() {
         </a>{' '}
         and{' '}
         <a
-          href={CMS_URL}
+          href="https://www.datocms.com/"
           className="underline hover:text-success duration-200 transition-colors"
         >
-          {CMS_NAME}
+          DatoCMS
         </a>
         .
       </h4>

@@ -1,7 +1,7 @@
 {
   "name": "Next.js Blog",
   "description": "Simple blog website built with Next.js and DatoCMS, with preview mode",
-  "previewImage": "https://www.datocms-assets.com/205/1584994498-screen-shot-2020-03-23-at-21-14-46-fullpage.png?crop=top&fit=crop&h=500&w=600&auto=format",
+  "previewImage": "https://www.datocms-assets.com/205/1605198221-screenshot2020-11-12-next-js-blog-example-with-datocms-1.jpg?crop=top&fit=crop&h=500&w=600&auto=format",
   "datocmsProjectId": "23796",
   "deploymentType": "static",
   "buildCommand": "npm run build",
