@@ -13,7 +13,7 @@ export default function Alert({ preview }) {
         <div className="py-2 text-center text-sm">
           {preview ? (
             <>
-              This is page is a preview.{' '}
+              This is page is showing draft content.{' '}
               <a
                 href="/api/exit-preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
@@ -24,14 +24,14 @@ export default function Alert({ preview }) {
             </>
           ) : (
             <>
-              The source code for this blog is{' '}
+              This is page is showing published content.{' '}
               <a
-                href="https://github.com/datocms/nextjs-demo"
-                className="underline hover:text-success duration-200 transition-colors"
+                href="/api/preview"
+                className="underline hover:text-cyan duration-200 transition-colors"
               >
-                available on GitHub
-              </a>
-              .
+                Click here
+              </a>{' '}
+              to enter preview mode!
             </>
           )}
         </div>
