@@ -8,7 +8,7 @@ The purpose of this repo is to have a quick start reference that can be set up w
 
 Have a look at the end result live:
 
-### [https://next-blog-datocms.now.sh/](https://next-blog-datocms.now.sh/)
+### [https://nextjs-demo-bay.vercel.app/](https://nextjs-demo-bay.vercel.app/)
 
 ## How to use
 
