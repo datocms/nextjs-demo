@@ -1,8 +1,6 @@
-# A statically generated blog example using Next.js and DatoCMS
+# A Blog example using Next.js and DatoCMS
 
-This example showcases Next.js's [Static Generation](/docs/basic-features/pages.md) feature using [DatoCMS](https://www.datocms.com/) as the data source.
-
-The author of this example is [chibicode](https://github.com/chibicode) and you can find the latest version of this example in the official [Next.js repo](https://github.com/zeit/next.js/tree/canary/examples/cms-datocms).
+This example showcases a Next.js Blog using [DatoCMS](https://www.datocms.com/) as the data source. It fully supports [Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode) with [DatoCMS real-time updates](https://www.datocms.com/docs/next-js/real-time-updates).
 
 The purpose of this repo is to have a quick start reference that can be set up with the "one-click" button below.
 
@@ -18,7 +16,7 @@ Have a look at the end result live:
 
 1. [Create an account on DatoCMS](https://datocms.com).
 
-2. Make sure that you have set up the [Github integration on Vercel](https://zeit.co/docs/v2/git-integrations/zeit-now-for-github).
+2. Make sure that you have set up the [Github integration on Vercel](https://vercel.com/docs/git/vercel-for-github).
 
 3. Let DatoCMS set everything up for you clicking this button:
 
@@ -82,7 +80,3 @@ http://localhost:3000/api/preview?secret=<secret>
 - `<slug>` should be the post's `slug` attribute (you can check on DatoCMS).
 
 You should now be able to see the updated title. To exit the preview mode, you can click **Click here to exit preview mode** at the top.
-
-#### Full guide
-
-To read all the details and a long form guide, please check the original example on the [Next.js repo](https://github.com/zeit/next.js/tree/canary/examples/cms-datocms)
