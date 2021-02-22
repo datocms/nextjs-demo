@@ -34,7 +34,20 @@ export async function getStaticProps({ params, preview = false }) {
           }
           title
           slug
-          content(markdown: true)
+          content {
+            value
+            blocks {
+              __typename
+              ...on ImageBlockRecord {
+                id
+                image {
+                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+                    ...responsiveImageFragment
+                  }
+                }
+              }
+            }
+          }
           date
           ogImage: coverImage{
             url(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 })
