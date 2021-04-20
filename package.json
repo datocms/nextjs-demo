@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.0",
+    "@tailwindcss/typography": "^0.4.0",
     "dotenv": "8.2.0",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^2.0.3",
-    "@tailwindcss/typography": "^0.4.0"
+    "tailwindcss": "^2.0.3"
   }
 }
