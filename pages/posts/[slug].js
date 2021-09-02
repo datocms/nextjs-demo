@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import Container from "../../components/container";
@@ -9,17 +10,25 @@ import PostHeader from "../../components/post-header";
 import SectionSeparator from "../../components/section-separator";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
+import LanguageBar from "../../components/language-bar";
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const data = await request({ query: `{ allPosts { slug } }` });
+  const pathsArray = [];
+  data.allPosts.map((post) => {
+    locales.map((language) => {
+      pathsArray.push({ params: { slug: post.slug }, locale: language });
+    });
+  });
 
   return {
-    paths: data.allPosts.map((post) => `/posts/${post.slug}`),
+    paths: pathsArray,
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps({ params, preview = false, locale }) {
+  const formatedLocale = locale.split("-")[0];
   const graphqlRequest = {
     query: `
       query PostBySlug($slug: String) {
@@ -28,7 +37,7 @@ export async function getStaticProps({ params, preview = false }) {
             ...metaTagsFragment
           }
         }
-        post(filter: {slug: {eq: $slug}}) {
+        post(locale: ${formatedLocale}, filter: {slug: {eq: $slug}}) {
           seo: _seoMetaTags {
             ...metaTagsFragment
           }
@@ -65,7 +74,7 @@ export async function getStaticProps({ params, preview = false }) {
           }
         }
 
-        morePosts: allPosts(orderBy: date_DESC, first: 2, filter: {slug: {neq: $slug}}) {
+        morePosts: allPosts(locale: ${formatedLocale}, orderBy: date_DESC, first: 2, filter: {slug: {neq: $slug}}) {
           title
           slug
           excerpt
@@ -120,6 +129,7 @@ export default function Post({ subscription, preview }) {
     <Layout preview={preview}>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Container>
+        <LanguageBar />
         <Header />
         <article>
           <PostHeader
