@@ -109,6 +109,7 @@ export async function getStaticProps({ params, preview = false }) {
             enabled: false,
             initialData: await request(graphqlRequest),
           },
+      preview,
     },
   };
 }
