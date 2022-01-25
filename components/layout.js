@@ -1,5 +1,5 @@
-import Alert from '../components/alert'
-import Footer from '../components/footer'
+import Alert from "./alert";
+import Footer from "./footer";
 
 export default function Layout({ preview, children }) {
   return (
@@ -10,5 +10,5 @@ export default function Layout({ preview, children }) {
       </div>
       <Footer />
     </>
-  )
+  );
 }
