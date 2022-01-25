@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Container from "../components/container";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
-import MoreStories from "../components/more-stories";
-import { request } from "../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import Container from "@/components/container";
+import HeroPost from "@/components/hero-post";
+import Intro from "@/components/intro";
+import Layout from "@/components/layout";
+import MoreStories from "@/components/more-stories";
+import { request } from "@/lib/datocms";
+import { metaTagsFragment, responsiveImageFragment } from "@/lib/fragments";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
@@ -35,7 +35,9 @@ export async function getStaticProps({ preview }) {
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100}) {
+                ...responsiveImageFragment
+              }
             }
           }
         }
