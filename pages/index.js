@@ -59,7 +59,7 @@ export async function getStaticProps({ preview }) {
             environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
           }
         : {
-            enabled: false,
+            enabled: true,
             initialData: await request(graphqlRequest),
           },
     },
