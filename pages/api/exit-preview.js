@@ -3,6 +3,6 @@ export default async (_, res) => {
   res.clearPreviewData();
 
   // Redirect the user back to the index page.
-  res.writeHead(307, { Location: "/" });
+  res.redirect('/');
   res.end();
 };

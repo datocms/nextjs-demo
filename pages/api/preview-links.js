@@ -22,11 +22,10 @@ const handler = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Content-Type', 'application/json');
 
   // This will allow OPTIONS request
   if (req.method === 'OPTIONS') {
-    return res.status(200).send('ok');
+    return res.status(200).json({ success: true });
   }
 
   const url = generatePreviewUrl(req.body);

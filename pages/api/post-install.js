@@ -43,23 +43,30 @@ export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Content-Type', 'application/json');
 
   // This will allow OPTIONS request
   if (req.method === 'OPTIONS') {
-    return res.status(200).send('ok');
+    return res.status(200).json({ success: true });
   }
 
   if (req.method !== 'POST') {
-    return res.status(404).send('Invalid route');
+    return res.status(404).json({ error: 'Invalid route' });
   }
 
   const client = buildClient({ apiToken: req.body.datocmsApiToken });
 
-  await Promise.all([
-    installWebPreviewsPlugin(client),
-    installSeoReadabilityPlugin(client),
-  ]);
+  try {
+    await Promise.all([
+      installWebPreviewsPlugin(client),
+      installSeoReadabilityPlugin(client),
+    ]);
 
-  return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    return res.status(500).json({
+      error: error.message,
+      request: error.request,
+      response: error.response,
+    });
+  }
 };
