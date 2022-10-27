@@ -1,13 +1,13 @@
-import { StructuredText, Image } from "react-datocms";
+import { StructuredText, Image } from 'react-datocms';
 
 export default function PostBody({ content }) {
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="prose prose-lg prose-blue">
+      <div className="prose prose-lg prose-blue" id="main-content">
         <StructuredText
           data={content}
           renderBlock={({ record }) => {
-            if (record.__typename === "ImageBlockRecord") {
+            if (record.__typename === 'ImageBlockRecord') {
               return <Image data={record.image.responsiveImage} />;
             }
 

@@ -8,7 +8,7 @@
   URL: <YOUR_WEBSITE>/api/preview-links
 */
 
-const generatePreviewUrl = ({ item, itemType }) => {
+const findUrlForItem = ({ item, itemType }) => {
   switch (itemType.attributes.api_key) {
     case 'post':
       return `/posts/${item.attributes.slug}`;
@@ -28,7 +28,7 @@ const handler = (req, res) => {
     return res.status(200).json({ success: true });
   }
 
-  const url = generatePreviewUrl(req.body);
+  const url = findUrlForItem(req.body);
 
   if (!url) {
     return res.status(200).json({ previewLinks: [] });
