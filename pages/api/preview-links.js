@@ -47,7 +47,7 @@ const handler = (req, res) => {
       url: `${baseUrl}${url}`,
     },
     {
-      label: 'Open in Preview Mode',
+      label: 'Draft version',
       url: `${baseUrl}/api/preview?redirect=${url}&secret=${process.env.NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET}`,
     },
   ];
