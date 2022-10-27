@@ -7,7 +7,9 @@ export default async (req, res) => {
 
   // Check the secret and next parameters
   if (secret && req.query.secret !== secret) {
-    return res.status(401).json({ message: 'Invalid token' });
+    return res
+      .status(401)
+      .json({ message: 'Missing or invalid `secret` query string parameter!' });
   }
 
   // Enable Preview Mode by setting the cookies
@@ -17,9 +19,5 @@ export default async (req, res) => {
   // string parameter:
   const redirectUrl = new URL(req.query.redirect || '/', 'https://example.com');
 
-  res.writeHead(307, {
-    Location: `${redirectUrl.pathname}${redirectUrl.search}`,
-  });
-
-  res.end();
+  res.redirect(`${redirectUrl.pathname}${redirectUrl.search}`);
 };
