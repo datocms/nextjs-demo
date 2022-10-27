@@ -8,13 +8,10 @@
   URL: <YOUR_WEBSITE>/api/preview-links
 */
 
-const generatePreviewLink = ({ item, itemType }) => {
+const generatePreviewUrl = ({ item, itemType }) => {
   switch (itemType.attributes.api_key) {
     case 'post':
-      return {
-        label: `${item.attributes.title}`,
-        url: `/blog/${item.attributes.slug}`,
-      };
+      return `/posts/${item.attributes.slug}`;
     default:
       return null;
   }
@@ -32,13 +29,11 @@ const handler = (req, res) => {
     return res.status(200).send('ok');
   }
 
-  const previewLink = generatePreviewLink(req.body);
+  const url = generatePreviewUrl(req.body);
 
-  if (!previewLink) {
+  if (!url) {
     return res.status(200).json({ previewLinks: [] });
   }
-
-  const { label, url } = previewLink;
 
   const baseUrl = process.env.VERCEL_URL
     ? // Vercel auto-populates this environment variable
@@ -48,12 +43,12 @@ const handler = (req, res) => {
 
   const previewLinks = [
     {
-      label,
+      label: 'Published version',
       url: `${baseUrl}${url}`,
     },
     {
-      label: `${label} (Preview Mode)`,
-      url: `${baseUrl}/api/start-preview-mode?redirect=${url}&secret=${process.env.NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET}`,
+      label: 'Open in Preview Mode',
+      url: `${baseUrl}/api/preview?redirect=${url}&secret=${process.env.NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET}`,
     },
   ];
 
