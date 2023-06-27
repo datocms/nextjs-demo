@@ -1,4 +1,4 @@
-import { StructuredText, Image } from 'react-datocms';
+import { StructuredText, Image as DatocmsImage } from 'react-datocms';
 
 export default function PostBody({ content }) {
   return (
@@ -8,12 +8,12 @@ export default function PostBody({ content }) {
           data={content}
           renderBlock={({ record }) => {
             if (record.__typename === 'ImageBlockRecord') {
-              return <Image data={record.image.responsiveImage} />;
+              return <DatocmsImage data={record.image.responsiveImage} />;
             }
 
             return (
               <>
-                <p>Don't know how to render a block!</p>
+                <p>Don&apos;t know how to render a block!</p>
                 <pre>{JSON.stringify(record, null, 2)}</pre>
               </>
             );

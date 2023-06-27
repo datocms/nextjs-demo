@@ -40,14 +40,14 @@ cp .env.example .env
 
 Then set each variable on `.env`:
 
-- `NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN` should be the API token you just copied.
-- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
+- `NEXT_DATOCMS_API_TOKEN` should be the API token you just copied.
+- `NEXT_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
 
 Your `.env` file should look like this:
 
 ```bash
-NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN=...
-NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET=...
+NEXT_DATOCMS_API_TOKEN=...
+NEXT_DATOCMS_PREVIEW_SECRET=...
 ```
 
 #### Run your project locally
@@ -73,10 +73,10 @@ Now, if you go to the post page on localhost, you won't see the updated title. H
 To enable the Preview Mode, go to this URL:
 
 ```
-http://localhost:3000/api/preview?secret=<secret>
+http://localhost:3000/api/draft?secret=<secret>
 ```
 
-- `<secret>` should be the string you entered for `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET`.
+- `<secret>` should be the string you entered for `NEXT_DATOCMS_PREVIEW_SECRET`.
 - `<slug>` should be the post's `slug` attribute (you can check on DatoCMS).
 
 You should now be able to see the updated title. To exit the preview mode, you can click **Click here to exit preview mode** at the top.

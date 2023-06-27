@@ -5,7 +5,7 @@
   "datocmsProjectId": "23796",
   "deploymentType": "static",
   "buildCommand": "npm run build",
-  "datocmsApiTokenEnvName": "NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN",
+  "datocmsApiTokenEnvName": "NEXT_DATOCMS_API_TOKEN",
   "livePreviewUrl": "https://nextjs-demo-bay.vercel.app/",
   "postInstallUrl": "/api/post-install"
 }

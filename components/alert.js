@@ -15,8 +15,8 @@ export default function Alert({ preview }) {
             <>
               This is page is showing draft content.{" "}
               <a
-                href="/api/exit-preview"
-                className="underline hover:text-cyan duration-200 transition-colors"
+                href="/api/exit-draft"
+                className="underline hover:text-success duration-200 transition-colors"
               >
                 Click here
               </a>{" "}
@@ -26,8 +26,8 @@ export default function Alert({ preview }) {
             <>
               This is page is showing published content.{" "}
               <a
-                href="/api/preview"
-                className="underline hover:text-cyan duration-200 transition-colors"
+                href="/api/draft"
+                className="underline hover:text-success duration-200 transition-colors"
               >
                 Click here
               </a>{" "}
