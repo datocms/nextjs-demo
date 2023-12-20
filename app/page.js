@@ -47,7 +47,7 @@ const PAGE_CONTENT_QUERY = `
 function getPageRequest() {
   const { isEnabled } = draftMode();
 
-  return { query: PAGE_CONTENT_QUERY, includeDrafts: isEnabled };
+  return { query: PAGE_CONTENT_QUERY, includeDrafts: isEnabled, revalidate: 1 };
 }
 
 export async function generateMetadata() {
