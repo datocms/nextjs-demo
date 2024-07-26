@@ -90,6 +90,7 @@ http://localhost:3000/api/draft?secret=<secret>
 You should now be able to see the updated title. To exit the preview mode, you can click **Click here to exit preview mode** at the top.
 
 <!--datocms-autoinclude-footer start-->
+
 ---
 
 # What is DatoCMS?
