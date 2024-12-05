@@ -48,12 +48,12 @@ Next, copy the `.env.local.example` file in this directory to `.env.local` (whic
 cp .env.local.example .env.local
 ```
 
-Then set each variable on `.env`:
+Then set each variable inside `.env.local`:
 
 - `NEXT_DATOCMS_API_TOKEN` should be the API token you just copied.
 - `NEXT_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
 
-Your `.env` file should look like this:
+Your `.env.local` file should look like this:
 
 ```bash
 NEXT_DATOCMS_API_TOKEN=...
