@@ -87,7 +87,7 @@ const PAGE_CONTENT_QUERY = `
 function getPageRequest(slug) {
   const { isEnabled } = draftMode();
 
-  return { query: PAGE_CONTENT_QUERY, includeDrafts: isEnabled, variables: { slug } };
+  return { query: PAGE_CONTENT_QUERY, includeDrafts: isEnabled, variables: { slug }, revalidate: 1 };
 }
 
 export async function generateMetadata({ params }) {
