@@ -11,9 +11,9 @@ const corsInitOptions = {
   },
 };
 
-const baseUrl = process.env.VERCEL_BRANCH_URL
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? // Vercel auto-populates this environment variable
-    `https://${process.env.VERCEL_BRANCH_URL}`
+    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : // Netlify auto-populates this environment variable
     process.env.URL;
 
