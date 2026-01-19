@@ -1,33 +1,44 @@
 {
-  "name": "cms-datocms",
-  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "generate-ts-types": "graphql-codegen --config --verbose graphql.config.ts"
   },
   "dependencies": {
-    "@datocms/cma-client-node": "*",
-    "classnames": "2.3.1",
-    "date-fns": "^2.28.0",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.7",
-    "jsdom": "^20.0.1",
-    "next": "^13.4.7",
-    "react": "^18.0.0",
-    "react-datocms": "^4.0.0",
-    "react-dom": "^18.0.0"
+    "@datocms/cda-client": "^0.2.7",
+    "@datocms/cma-client-node": "^5.1.30",
+    "@graphql-codegen/typed-document-node": "^6.1.4",
+    "@graphql-codegen/typescript": "^5.0.6",
+    "@graphql-codegen/typescript-operations": "^5.0.6",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "framer-motion": "^12.0.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "got": "^14.0.0",
+    "gql": "^1.1.2",
+    "graphql": "^16.7.1",
+    "next": "latest",
+    "next-themes": "^0.4.6",
+    "postcss": "^8.5.6",
+    "react": "^19",
+    "react-datocms": "^7.2.4",
+    "react-dom": "^19",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
-    "dotenv": "14.3.0",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.2"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "@biomejs/biome": "2.3.11",
+    "@datocms/cma-client": "^5.1.30",
+    "@graphql-codegen/cli": "^6.1.0",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
+    "graphql-config": "^5.1.0",
+    "typescript": "^5.9.3"
   }
 }
