@@ -53,13 +53,23 @@ export async function POST(request) {
       label: 'Published version',
       url: `${baseUrl}${url}`,
     },
-    {
-      label: 'Draft version',
-      url: `${baseUrl}/api/draft?redirect=${url}&secret=${
-        process.env.NEXT_DATOCMS_PREVIEW_SECRET || ''
-      }`,
-    },
   ];
+
+  const publicPreview = process.env.NEXT_DATOCMS_PUBLIC_PREVIEW === 'true';
+  const secret = process.env.NEXT_DATOCMS_PREVIEW_SECRET;
+
+  if (publicPreview || secret) {
+    const params = new URLSearchParams({ redirect: url });
+
+    if (!publicPreview) {
+      params.set('secret', secret);
+    }
+
+    previewLinks.push({
+      label: 'Draft version',
+      url: `${baseUrl}/api/draft?${params.toString()}`,
+    });
+  }
 
   return NextResponse.json({ previewLinks }, corsInitOptions);
 };

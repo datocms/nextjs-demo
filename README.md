@@ -52,12 +52,14 @@ Then set each variable inside `.env.local`:
 
 - `NEXT_DATOCMS_API_TOKEN` should be the API token you just copied.
 - `NEXT_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
+- `NEXT_DATOCMS_PUBLIC_PREVIEW` should stay `false` unless this is an official public demo where anyone can enter Preview Mode.
 
 Your `.env.local` file should look like this:
 
 ```bash
 NEXT_DATOCMS_API_TOKEN=...
 NEXT_DATOCMS_PREVIEW_SECRET=...
+NEXT_DATOCMS_PUBLIC_PREVIEW=false
 ```
 
 #### Run your project locally
