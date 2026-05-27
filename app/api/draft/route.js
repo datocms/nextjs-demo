@@ -2,16 +2,20 @@ import { NextResponse } from "next/server";
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
 
-export async function GET(request) {
-  // Please set the NEXT_DATOCMS_PREVIEW_SECRET env variable
-  // on Vercel/Netlify, or everyone will be able to enter Preview Mode and
-  // see draft content!
-  const secret = process.env.NEXT_DATOCMS_PREVIEW_SECRET;
+function canEnterDraftMode(requestedSecret) {
+  const previewSecret = process.env.NEXT_DATOCMS_PREVIEW_SECRET;
 
+  if (previewSecret) {
+    return requestedSecret === previewSecret;
+  }
+
+  return process.env.NEXT_DATOCMS_PUBLIC_PREVIEW === "true";
+}
+
+export async function GET(request) {
   const { searchParams } = new URL(request.url);
 
-  // Check the secret and next parameters
-  if (secret && searchParams.get("secret") !== secret) {
+  if (!canEnterDraftMode(searchParams.get("secret"))) {
     return NextResponse.json({
       message: "Missing or invalid `secret` query string parameter!",
     }, { status: 401 });

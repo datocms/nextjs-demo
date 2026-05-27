@@ -19,6 +19,10 @@
     "DATOCMS_CMA_TOKEN": {
       "type": "datocmsAccessToken",
       "tokenName": "CMA Only (Read)"
+    },
+    "NEXT_DATOCMS_PUBLIC_PREVIEW": {
+      "type": "string",
+      "value": "true"
     }
   }
 }

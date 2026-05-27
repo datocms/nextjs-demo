@@ -33,6 +33,23 @@ const findUrlForItem = ({ item, itemType }) => {
   }
 };
 
+function canGenerateDraftPreviewLink() {
+  return (
+    Boolean(process.env.NEXT_DATOCMS_PREVIEW_SECRET) ||
+    process.env.NEXT_DATOCMS_PUBLIC_PREVIEW === 'true'
+  );
+}
+
+function draftPreviewUrl(url) {
+  const params = new URLSearchParams({ redirect: url });
+
+  if (process.env.NEXT_DATOCMS_PREVIEW_SECRET) {
+    params.set('secret', process.env.NEXT_DATOCMS_PREVIEW_SECRET);
+  }
+
+  return `${baseUrl}/api/draft?${params.toString()}`;
+}
+
 export async function OPTIONS(request) {
   return NextResponse.json(
     { success: true },
@@ -53,13 +70,14 @@ export async function POST(request) {
       label: 'Published version',
       url: `${baseUrl}${url}`,
     },
-    {
-      label: 'Draft version',
-      url: `${baseUrl}/api/draft?redirect=${url}&secret=${
-        process.env.NEXT_DATOCMS_PREVIEW_SECRET || ''
-      }`,
-    },
   ];
+
+  if (canGenerateDraftPreviewLink()) {
+    previewLinks.push({
+      label: 'Draft version',
+      url: draftPreviewUrl(url),
+    });
+  }
 
   return NextResponse.json({ previewLinks }, corsInitOptions);
 };
