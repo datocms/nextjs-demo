@@ -5,7 +5,20 @@
   "datocmsProjectId": "23796",
   "deploymentType": "static",
   "buildCommand": "npm run build",
-  "datocmsApiTokenEnvName": "NEXT_DATOCMS_API_TOKEN",
   "livePreviewUrl": "https://nextjs-demo-bay.vercel.app/",
-  "postInstallUrl": "/api/post-install"
+  "postInstallUrl": "/api/post-install",
+  "environmentVariables": {
+    "DATOCMS_PUBLISHED_CONTENT_CDA_TOKEN": {
+      "type": "datocmsAccessToken",
+      "tokenName": "CDA Only (Published)"
+    },
+    "DATOCMS_DRAFT_CONTENT_CDA_TOKEN": {
+      "type": "datocmsAccessToken",
+      "tokenName": "CDA Only (Draft)"
+    },
+    "DATOCMS_CMA_TOKEN": {
+      "type": "datocmsAccessToken",
+      "tokenName": "CMA Only (Read)"
+    }
+  }
 }

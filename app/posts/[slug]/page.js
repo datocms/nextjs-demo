@@ -108,7 +108,7 @@ export default async function Page({ params }) {
         subscription={{
           ...pageRequest,
           initialData: data,
-          token: process.env.NEXT_DATOCMS_API_TOKEN,
+          token: process.env.DATOCMS_DRAFT_CONTENT_CDA_TOKEN,
           environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
         }}
       />

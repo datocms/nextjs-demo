@@ -34,7 +34,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
 
   const client = buildClient({
-    apiToken: process.env.NEXT_DATOCMS_API_TOKEN,
+    apiToken: process.env.DATOCMS_CMA_TOKEN,
     environment: searchParams.get("sandboxEnvironmentId"),
   });
 
